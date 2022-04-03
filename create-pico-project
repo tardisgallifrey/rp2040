@@ -1,0 +1,19 @@
+#!/bin/bash
+
+#Creates a PICO project basic ready to run
+if [ -z $1 ]; then
+        echo "Usage: create-pico-project NAMEofMYproject"
+        echo "     Name of project as argument is required."
+        echo "     Exiting"
+        exit 0
+fi
+
+mkdir $1
+mkdir ./$1/include
+mkdir ./$1/build
+
+cp main.c ./$1
+cp CMakeLists.txt ./$1
+cp messages.h ./$1/include
+
+
